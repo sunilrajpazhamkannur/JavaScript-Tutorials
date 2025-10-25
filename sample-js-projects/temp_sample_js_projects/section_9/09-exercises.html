@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercises</title>
+</head>
+<body>
+    <button>9a</button>
+    <button class="js-second-button">9b</button>
+    <br><br>
+    <button onclick="displayChoice('heads');">heads</button>
+    <button onclick="displayChoice('tails');">tails</button>
+    <p class="js-choice-display"></p>
+    <input class="js-name-input" onkeydown="handleKeypress(event)">
+    <button onclick="displayName()">Submit</button>
+    <p class="js-name-display"></p>
+    <input class="js-text-input" onkeyup="updateDisplay(event);">
+    <p class="js-text-display"></p>
+    
+    <script>
+        console.log(document.querySelector('button'));
+
+        document.querySelector('.js-second-button').innerHTML = '9b done';
+
+        function displayChoice(choice) {
+            document.querySelector('.js-choice-display').innerHTML = 
+                `You chose: ${choice}`;
+        }
+
+        function displayName() {
+            document.querySelector('.js-name-display').innerHTML = 
+                `Your name is: ${document.querySelector('.js-name-input').value}`;
+        }
+
+        function handleKeypress(event) {
+            if (event.key === 'Enter') {displayName;}
+        }
+
+        function updateDisplay(event) {
+            document.querySelector('.js-text-display').innerHTML += event.key;
+        }
+    </script>
+</body>
+</html>

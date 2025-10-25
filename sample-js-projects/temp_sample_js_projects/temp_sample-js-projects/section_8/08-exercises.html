@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercises</title>
+</head>
+<body>
+    
+    <script>
+        const product1 = {
+            name: 'basketball',
+            price: 2095
+        };
+
+        const product2 = {
+            name: 'baseball',
+            price: 1095
+        };
+
+        console.log(product1);
+        product1.price += 500;
+        console.log(product1);
+        product1['delivery-time'] = '3 days';
+        console.log(product1);
+
+        function comparePrice(product1, product2) {
+            return product1.price > product2.price ? product2 : product1;
+        }
+
+        console.log(comparePrice(product1, product2));
+
+        function isSameProduct(product1, product2) {
+            if (product1.name === product2.name && product1.price === product2.price) {
+                return true;
+            }
+            return false;
+        }
+        
+        console.log(isSameProduct(product1, product1));
+
+        console.log('ALMA'.toLocaleLowerCase().repeat(5));
+
+    </script>
+</body>
+</html>

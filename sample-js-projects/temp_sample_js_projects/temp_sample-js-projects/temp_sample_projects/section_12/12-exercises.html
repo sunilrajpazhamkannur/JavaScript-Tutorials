@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercises</title>
+</head>
+<body>
+    <button class="js-start-button">Start</button><br>
+    <button class="js-add-to-cart-button">Add to cart</button>
+    <p class="js-added-display"></p><br>
+    <button class="js-remove-message-button">Remove</button>
+    <button class="js-add-message-button">Add</button>
+    
+    <script>
+        const add = () => {
+            console.log(2 + 3);
+        }
+        add();
+        add();
+
+        function runTwice(func) {
+            func();
+            func();
+        }
+        runTwice(add);
+
+        const startButton = document.querySelector('.js-start-button');
+        startButton.addEventListener('click', () => {
+            startButton.innerHTML = 'Loading...';
+            setTimeout(function() {
+                startButton.innerHTML = 'Finished!';
+            }, 1000);
+        })
+
+        const addToCartButton = document.querySelector('.js-add-to-cart-button');
+        const addedDisplay = document.querySelector('.js-added-display');
+        let timeoutId;
+        addToCartButton.addEventListener('click', () => {
+            addedDisplay.innerHTML = 'Added';
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                addedDisplay.innerHTML = '';
+            }, 2000);
+        })
+
+        let messages = 0;
+        const addMessageButton = document.querySelector('.js-add-message-button');
+        const removeMessageButton = document.querySelector('.js-remove-message-button');
+
+        addMessageButton.addEventListener('click', () => {
+            messages++;
+        })
+        removeMessageButton.addEventListener('click', () => {
+            if (messages - 1 < 0) {return;}
+            messages--;
+        })
+
+        setInterval(() => {
+            if (document.title === 'App' && messages > 0) {
+                document.title = `(${messages}) New messages`;
+            } else {
+                document.title = 'App';
+            }
+        }, 1000)
+
+        const multiply = (num1, num2) => num1 * num2
+        console.log(multiply(2,3));
+
+        function countPositive(nums) {
+            let count = 0;
+            nums.forEach((num) => {
+                if (num > 0) {
+                    count++;
+                }
+            })
+            return count;
+        }
+
+        function addNum(array, num) {
+            return array.map(value => value + num)
+        }
+        console.log(addNum([1,2,3], 2))
+
+        function removeEggs(foods) {
+            let count = 0;
+            return foods.filter(food => {
+                if (food === 'egg' && count < 2) {
+                    count++;
+                    return;
+                } else {
+                    return food;
+                }
+            })
+        }
+        console.log(removeEggs(['egg', 'ham', 'egg', 'salad', 'egg', 'salad']))
+    </script>
+</body>
+</html>

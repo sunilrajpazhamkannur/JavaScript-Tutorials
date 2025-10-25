@@ -1,0 +1,31 @@
+body {
+    font-family: Arial;
+}
+button {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.add-to-cart-button {
+    background-color: rgb(255, 216, 20);
+    border: none;
+    border-radius: 50px;
+    padding: 6px 35px;
+    font-size: 15px;
+}
+.request-button, .schedule-button, .gaming-button, .gaming-button2, .music-button, .tech-button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+}
+.request-button {
+    background-color: black;
+    color: white;
+}
+.schedule-button, .gaming-button {
+    background-color: rgb(231, 231, 231);
+}
+.is-toggled {
+    background-color: black;
+    color: white;
+}

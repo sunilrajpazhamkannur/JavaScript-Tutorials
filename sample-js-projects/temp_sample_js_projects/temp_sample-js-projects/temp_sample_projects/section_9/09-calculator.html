@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <p class="js-calculation-display"></p>
+    <div>
+        <button onclick="
+            updateCalculation('1');
+        ">1</button>
+        <button onclick="
+            updateCalculation('2');
+        ">2</button>
+        <button onclick="
+            updateCalculation('3');
+        ">3</button>
+    </div>
+    <div>
+        <button onclick="
+            updateCalculation('4');
+        ">4</button>
+        <button onclick="
+            updateCalculation('5');
+        ">5</button>
+        <button onclick="
+            updateCalculation('6');
+        ">6</button>
+    </div>
+    <div>
+        <button onclick="
+            updateCalculation('7');
+        ">7</button>
+        <button onclick="
+            updateCalculation('8');
+        ">8</button>
+        <button onclick="
+            updateCalculation('9');
+        ">9</button>
+    </div>
+    <div>
+        <button onclick="
+            updateCalculation('0');
+        ">0</button>
+        <button onclick="
+            updateCalculation(' + ');
+        ">+</button>
+        <button onclick="
+            evalCalc()
+        ">=</button>
+        <button onclick="
+            calculation = '';
+            updateCalculationDisplay();
+            localStorage.setItem('calculation', calculation);
+        ">Reset</button>
+    </div>
+    
+    <script>
+        let calculation = localStorage.getItem('calculation') || '';
+        updateCalculationDisplay();
+
+        function updateCalculation(str) {
+            calculation += str;
+            localStorage.setItem('calculation', calculation);
+            updateCalculationDisplay();
+        }
+
+        function evalCalc() {
+            calculation = eval(calculation);
+            updateCalculationDisplay();
+            localStorage.setItem('calculation', calculation);
+        }
+
+        function updateCalculationDisplay() {
+            document.querySelector('.js-calculation-display').innerHTML = calculation;
+        }
+    </script>
+</body>
+</html>
