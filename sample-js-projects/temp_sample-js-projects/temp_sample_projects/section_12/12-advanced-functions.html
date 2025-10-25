@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <button class="js-button">click</button>
+    
+    <script>
+        /*
+        const buttonElement = document.querySelector('.js-button');
+        buttonElement.addEventListener('click', () => {
+            console.log('click');
+        });
+        const eventListener = () => {
+            console.log('click2');
+        }
+        buttonElement.addEventListener('click', eventListener);
+        buttonElement.removeEventListener('click', eventListener);
+        */
+        /*
+        function greeting() {
+            console.log(`Hello1`);
+        }
+
+        greeting();
+
+        const function1 = function() {
+            console.log(`Hello2`);
+        }
+
+        function1();
+        console.log(typeof function1);
+
+        const object1 = {
+            num: 2,
+            fun: function() {
+                console.log('Hello3');
+            }
+        }
+        object1.fun();
+
+        function display(param) {
+            console.log(param);
+        }
+        display('Hello4');
+
+        function run(param) {
+            param();
+        }
+        run (function() {
+            console.log('Hello5');
+        })
+
+        // -------------------------------------------
+
+        setTimeout(function() {
+            console.log('Timeout');
+        }, 1000);
+
+        console.log('next line');
+
+        let i = 0;
+        setInterval(function() {
+            i++;
+            console.log(i);
+        }, 3000);
+        */
+        /*
+        ['make dinner', 'wash dishes', 'watch youtube'].forEach((value, index) => {
+            if (value === 'wash dishes') {
+                return;
+            }
+            console.log(value, index);
+        });
+
+        const regularFunction = function(param, param2) {
+            console.log('Hello');
+            return 5;
+        }
+
+        const arrowFunction = (param, param2) => {
+            console.log('Hello');
+            return 5;
+        }
+
+        arrowFunction();
+
+        const oneParam = param => {
+            console.log(param)
+        }
+        oneParam('oneParam')
+
+        const oneLine = param => console.log(param)
+        oneLine('oneLine');
+
+        const object2 = {
+            method1: () => {
+
+            },
+            method2() {
+
+            }
+        }
+        */
+
+        console.log([1, -3, 5].filter((value, index) => {
+            return value > 0;
+        }))
+
+        console.log([1, 1, 3].map((value, index) => {
+            return value + 10;
+        }))
+    </script>
+</body>
+</html>

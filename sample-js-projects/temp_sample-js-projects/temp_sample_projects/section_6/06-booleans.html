@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booleans</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        console.log(3 < 5);
+        console.log(3 > 5);
+
+        console.log(typeof true, typeof false);
+
+        console.log(5 == '5.00'); // -> true
+        console.log(5 === '5.00'); // exact match
+
+        console.log(3 > 5 - 3);
+
+        if (false) {
+            console.log('Hello!');
+        } else {
+            console.log('Else!')
+        }
+
+        const age = 15;
+        if (age >= 18) {
+            console.log('You can drive!');
+        }
+        else if (age >= 15) {
+            console.log('Almost there!');
+        }
+        else {
+            console.log('You can\'t drive!');
+        }
+
+        console.log(true && false);
+        console.log(true || false);
+        console.log(!true);
+
+        // truthy and falsy values
+        console.log('truthy');
+        console.log(0);
+        console.log('');
+        console.log(NaN);
+        console.log(undefined);
+        console.log(null);
+
+        const cartQuantity = 5;
+        if (cartQuantity) {
+            console.log('The cart has products!');
+        }
+
+        console.log(!0);
+
+        // shrtcuts for if statements
+
+        // ternary
+        const result = 0 ? 'truthy' : 'falsy';
+        console.log(result)
+
+        false && console.log('Hello'); // guard operator
+        const message = 5 && 'Hello';
+
+        const currency = undefined || 'USD'; // default operator
+        console.log(currency);
+    </script>
+</body>
+</html>
